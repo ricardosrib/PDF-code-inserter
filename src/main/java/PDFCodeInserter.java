@@ -32,7 +32,7 @@ public class PDFCodeInserter {
             Iterator<Row> rowIterator = sheet.iterator();
 
             for (int i = 0; i < rowIndex; i++) {
-                rowIterator.next(); // Skip row
+                rowIterator.next();
             }
 
             while (rowIterator.hasNext()) {
@@ -40,7 +40,7 @@ public class PDFCodeInserter {
                 Cell cell = row.getCell(columnIndex);
 
                 if (cell != null) {
-                    // Assuming the codes are numeric; adjust if they are of different types
+                    // Assuming the codes are numeric (adjust if they are of different types)
                     codes.add(String.valueOf((long) cell.getNumericCellValue()));
                 }
             }
@@ -73,7 +73,6 @@ public class PDFCodeInserter {
                 contentStream.endText();
             }
 
-            // Save the modified document
             document.save(outputFilePath);
         }
     }

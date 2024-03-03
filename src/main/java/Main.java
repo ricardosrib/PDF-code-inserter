@@ -7,6 +7,10 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int sheetIndex = 0;
+        int columnIndex = 0;
+        int rowIndex = 0;
+
         String excelFilePath = "";
         String pdfFilePath = "";
         int pageNum = 1;
@@ -19,9 +23,9 @@ public class Main {
             // Read codes from Excel file
             List<String> codes = PDFCodeInserter.readCodesFromExcel(
                     excelFilePath,
-                    0,
-                    0,
-                    0
+                    sheetIndex,
+                    columnIndex,
+                    rowIndex
             );
 
             // Process each PDF file
